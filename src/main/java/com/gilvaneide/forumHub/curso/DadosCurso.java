@@ -1,4 +1,4 @@
-package com.gilvaneide.forumHub.topico;
+package com.gilvaneide.forumHub.curso;
 
 import jakarta.validation.constraints.NotBlank;
 
