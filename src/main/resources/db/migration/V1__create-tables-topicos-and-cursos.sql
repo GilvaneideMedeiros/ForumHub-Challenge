@@ -1,14 +1,12 @@
--- Cria a tabela de cursos
 CREATE TABLE cursos (
     id BIGINT NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(100) NOT NULL UNIQUE,
     PRIMARY KEY (id)
 );
 
--- Cria a tabela de topicos
 CREATE TABLE topicos (
     id BIGINT NOT NULL AUTO_INCREMENT,
-    titulo VARCHAR(100) NOT NULL,
+    titulo VARCHAR(100) NOT NULL UNIQUE,
     mensagem TEXT NOT NULL,
     data_criacao DATETIME NOT NULL,
     estado_topico VARCHAR(50) NOT NULL,

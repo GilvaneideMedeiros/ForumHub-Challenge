@@ -1,6 +1,6 @@
-package com.gilvaneide.forumHub.topico;
+package com.gilvaneide.forumhub.topico;
 
-import com.gilvaneide.forumHub.curso.DadosCurso;
+import com.gilvaneide.forumhub.curso.DadosCurso;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

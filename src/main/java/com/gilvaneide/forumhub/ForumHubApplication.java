@@ -1,4 +1,4 @@
-package com.gilvaneide.forumHub;
+package com.gilvaneide.forumhub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

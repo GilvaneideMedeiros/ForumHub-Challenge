@@ -1,4 +1,4 @@
-package com.gilvaneide.forumHub.topico;
+package com.gilvaneide.forumhub.topico;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
