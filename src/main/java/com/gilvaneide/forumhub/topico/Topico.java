@@ -34,7 +34,7 @@ public class Topico {
     @Column(name = "estado_topico")
     private EstadoTopico estado;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
@@ -47,4 +47,15 @@ public class Topico {
         this.estado = EstadoTopico.NAO_SOLUCIONADO;
     }
 
+    public void atualizarInformacoes(DadosAtualizacaoTopico dados) {
+        if (dados.titulo() != null) {
+            this.titulo = dados.titulo();
+        }
+        if (dados.mensagem() != null) {
+            this.mensagem = dados.mensagem();
+        }
+        if (dados.estado() != null) {
+            this.estado = dados.estado();
+        }
+    }
 }
