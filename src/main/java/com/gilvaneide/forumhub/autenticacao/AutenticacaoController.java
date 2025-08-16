@@ -2,7 +2,7 @@ package com.gilvaneide.forumhub.autenticacao;
 
 import com.gilvaneide.forumhub.infra.security.DadosTokenJWT;
 import com.gilvaneide.forumhub.infra.security.TokenService;
-import com.gilvaneide.forumhub.usuario.Usuario;
+import com.gilvaneide.forumhub.usuario.entity.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,5 +1,6 @@
-package com.gilvaneide.forumhub.topico;
+package com.gilvaneide.forumhub.topico.repository;
 
+import com.gilvaneide.forumhub.topico.entity.Topico;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

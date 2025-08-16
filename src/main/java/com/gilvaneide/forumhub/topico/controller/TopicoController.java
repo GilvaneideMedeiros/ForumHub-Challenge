@@ -1,7 +1,12 @@
-package com.gilvaneide.forumhub.topico;
+package com.gilvaneide.forumhub.topico.controller;
 
-import com.gilvaneide.forumhub.curso.CursoRepository;
-import com.gilvaneide.forumhub.curso.Curso;
+import com.gilvaneide.forumhub.curso.repository.CursoRepository;
+import com.gilvaneide.forumhub.curso.entity.Curso;
+import com.gilvaneide.forumhub.topico.dto.DadosAtualizacaoTopico;
+import com.gilvaneide.forumhub.topico.dto.DadosCadastroTopico;
+import com.gilvaneide.forumhub.topico.dto.DadosDetalhamentoTopico;
+import com.gilvaneide.forumhub.topico.repository.TopicoRepository;
+import com.gilvaneide.forumhub.topico.entity.Topico;
 import jakarta.validation.Valid;
 
 import java.net.URI;
@@ -46,7 +51,8 @@ public class TopicoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<DadosDetalhamentoTopico> detalharTopico(@PathVariable Long id) {
-        var topico = topicoRepository.getReferenceById(id);
+        var topico = topicoRepository.findById(id)
+                .orElseThrow(() -> new jakarta.persistence.EntityNotFoundException("Tópico não encontrado com id: " + id));
         return ResponseEntity.ok(new DadosDetalhamentoTopico(topico));
     }
 
@@ -54,14 +60,18 @@ public class TopicoController {
     @Transactional
     public ResponseEntity<DadosDetalhamentoTopico> atualizarTopico(@PathVariable Long id,
                                                                    @RequestBody @Valid DadosAtualizacaoTopico dados) {
-        var topico = topicoRepository.getReferenceById(id);
+        var topico = topicoRepository.findById(id)
+                .orElseThrow(() -> new jakarta.persistence.EntityNotFoundException("Tópico não encontrado para atualização com id: " + id));
         topico.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosDetalhamentoTopico(topico));
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> excluirTopico(@PathVariable Long id) {
+    public ResponseEntity<Void> excluirTopico(@PathVariable Long id) {        
+        if (!topicoRepository.existsById(id)) {
+            throw new jakarta.persistence.EntityNotFoundException("Tópico não encontrado para exclusão com id: " + id);
+        }
         topicoRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }

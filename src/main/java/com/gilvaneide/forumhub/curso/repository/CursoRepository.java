@@ -1,5 +1,6 @@
-package com.gilvaneide.forumhub.curso;
+package com.gilvaneide.forumhub.curso.repository;
 
+import com.gilvaneide.forumhub.curso.entity.Curso;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

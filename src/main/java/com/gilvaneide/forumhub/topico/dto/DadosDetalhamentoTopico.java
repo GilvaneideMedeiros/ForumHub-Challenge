@@ -1,4 +1,7 @@
-package com.gilvaneide.forumhub.topico;
+package com.gilvaneide.forumhub.topico.dto;
+
+import com.gilvaneide.forumhub.topico.enums.EstadoTopico;
+import com.gilvaneide.forumhub.topico.entity.Topico;
 
 import java.time.LocalDateTime;
 

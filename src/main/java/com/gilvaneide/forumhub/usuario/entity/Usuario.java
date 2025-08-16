@@ -1,4 +1,4 @@
-package com.gilvaneide.forumhub.usuario;
+package com.gilvaneide.forumhub.usuario.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

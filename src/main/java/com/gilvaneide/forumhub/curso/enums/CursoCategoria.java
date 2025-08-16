@@ -1,4 +1,4 @@
-package com.gilvaneide.forumhub.curso;
+package com.gilvaneide.forumhub.curso.enums;
 
 public enum CursoCategoria {
     BACK_END,

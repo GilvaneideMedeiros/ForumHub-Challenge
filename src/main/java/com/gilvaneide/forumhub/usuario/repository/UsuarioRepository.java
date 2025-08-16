@@ -1,5 +1,6 @@
-package com.gilvaneide.forumhub.usuario;
+package com.gilvaneide.forumhub.usuario.repository;
 
+import com.gilvaneide.forumhub.usuario.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

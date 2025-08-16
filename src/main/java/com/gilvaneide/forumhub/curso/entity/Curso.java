@@ -1,5 +1,7 @@
-package com.gilvaneide.forumhub.curso;
+package com.gilvaneide.forumhub.curso.entity;
 
+import com.gilvaneide.forumhub.curso.enums.CursoCategoria;
+import com.gilvaneide.forumhub.curso.dto.DadosCurso;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,6 +22,6 @@ public class Curso {
 
     public Curso(DadosCurso dados) {
         this.nome = dados.nome();
-        this.categoria = CursoCategoria.valueOf(dados.categoria().toUpperCase());
+        this.categoria = CursoCategoria.valueOf(dados.categoria().toUpperCase().replace("-", "_"));
     }
 }

@@ -1,6 +1,6 @@
 package com.gilvaneide.forumhub.infra.security;
 
-import com.gilvaneide.forumhub.usuario.UsuarioRepository;
+import com.gilvaneide.forumhub.usuario.repository.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

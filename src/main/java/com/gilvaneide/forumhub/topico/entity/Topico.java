@@ -1,10 +1,10 @@
-package com.gilvaneide.forumhub.topico;
+package com.gilvaneide.forumhub.topico.entity;
 
-import com.gilvaneide.forumhub.curso.Curso;
-import com.gilvaneide.forumhub.curso.DadosCurso;
+import com.gilvaneide.forumhub.curso.entity.Curso;
+import com.gilvaneide.forumhub.topico.dto.DadosAtualizacaoTopico;
+import com.gilvaneide.forumhub.topico.dto.DadosCadastroTopico;
+import com.gilvaneide.forumhub.topico.enums.EstadoTopico;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
