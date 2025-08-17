@@ -1,5 +1,6 @@
 package com.gilvaneide.forumhub.usuario.entity;
 
+import com.gilvaneide.forumhub.perfil.entity.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

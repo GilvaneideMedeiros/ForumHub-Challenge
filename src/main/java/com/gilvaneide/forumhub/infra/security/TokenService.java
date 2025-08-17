@@ -2,10 +2,8 @@ package com.gilvaneide.forumhub.infra.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTCreationException;
-import com.auth0.jwt.exceptions.SignatureVerificationException;
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.auth0.jwt.exceptions.TokenExpiredException;
+import com.auth0.jwt.exceptions.*;
+import com.gilvaneide.forumhub.infra.exception.InvalidTokenException;
 import com.gilvaneide.forumhub.usuario.entity.Usuario;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -40,12 +38,8 @@ public class TokenService {
                     .build()
                     .verify(tokenJWT)
                     .getSubject();
-        } catch (SignatureVerificationException ex) {
-            throw new RuntimeException("Assinatura do token JWT inválida!");
-        } catch (TokenExpiredException ex) {
-            throw new RuntimeException("Token JWT expirado!");
         } catch (JWTVerificationException exception) {
-            throw new RuntimeException("Token JWT inválido (outra causa)!");
+            throw new InvalidTokenException("Token JWT inválido ou expirado.");
         }
     }
 

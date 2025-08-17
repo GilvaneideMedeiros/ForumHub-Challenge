@@ -45,17 +45,18 @@ CREATE TABLE topicos (
 );
 
 -- Inserindo dados iniciais
--- Perfil padrão
-INSERT INTO perfis(id, nome) VALUES (1, 'ROLE_USER');
+-- Perfis
+INSERT INTO perfis(id, nome) VALUES (1, 'ROLE_USER'), (2, 'ROLE_ADMIN');
 
 -- Usuário padrão (admin)
+-- A senha é '123456', criptografada com BCrypt.
 INSERT INTO usuarios(id, nome, email, senha) VALUES(1, 'Admin User', 'admin@forumhub.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');
 
--- Associando o usuário admin ao perfil ROLE_USER
-INSERT INTO usuarios_perfis(usuario_id, perfil_id) VALUES(1, 1);
+-- Associando o usuário admin aos perfis: USER e ADMIN
+INSERT INTO usuarios_perfis(usuario_id, perfil_id) VALUES(1, 1), (1, 2);
 
 -- Inserindo um curso de exemplo
-INSERT INTO cursos(nome, categoria) VALUES('Spring Boot 3', 'BACK_END');
+INSERT INTO cursos(nome, categoria) VALUES('Spring Boot 3', 'Programação');
 
 -- Inserindo um tópico de exemplo associado ao curso e ao usuário admin
 INSERT INTO topicos(titulo, mensagem, data_criacao, estado, autor, curso_id)
