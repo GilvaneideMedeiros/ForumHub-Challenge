@@ -37,7 +37,7 @@ O projeto foi construído com foco em boas práticas de desenvolvimento, como ar
 
 Assista a um vídeo demonstrando as principais funcionalidades da API em ação.
 
-*(Link para o seu vídeo aqui)*
+*([Link para o vídeo aqui](https://youtu.be/zwnMJMkooNs?si=zWW-U4N0n24qPbT1))*
 
 ---
 
