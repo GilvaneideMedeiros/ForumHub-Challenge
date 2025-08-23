@@ -30,11 +30,10 @@ public class Topico {
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "estado_topico")
+    @Column(name = "estado")
     private EstadoTopico estado;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
@@ -44,7 +43,7 @@ public class Topico {
         this.autor = dados.autor();
         this.curso = curso;
         this.dataCriacao = LocalDateTime.now();
-        this.estado = EstadoTopico.NAO_SOLUCIONADO;
+        this.estado = EstadoTopico.NAO_RESPONDIDO;
     }
 
     public void atualizarInformacoes(DadosAtualizacaoTopico dados) {

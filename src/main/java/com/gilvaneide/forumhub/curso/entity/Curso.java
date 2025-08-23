@@ -17,11 +17,10 @@ public class Curso {
     private Long id;
     private String nome;
 
-    @Enumerated(EnumType.STRING)
     private CursoCategoria categoria;
 
     public Curso(DadosCurso dados) {
         this.nome = dados.nome();
-        this.categoria = CursoCategoria.valueOf(dados.categoria().toUpperCase().replace("-", "_"));
+        this.categoria = CursoCategoria.fromDescricao(dados.categoria());
     }
 }
